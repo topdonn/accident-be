@@ -4,14 +4,14 @@
     <data-source name="MySQL - tasker_test@localhost" uuid="f103a072-f03f-4fef-812c-07455a5d5fc6">
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-scope>tasker_test:</introspection-scope>
-      <resolve-scope>tasker_test:</resolve-scope>
     </data-source>
     <data-source name="MySQL - tasker_dev@localhost" uuid="2d7b5736-223e-46f7-a86d-c57f495d9182">
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-scope>tasker_dev:</introspection-scope>
-      <resolve-scope>tasker_dev:</resolve-scope>
+    </data-source>
+    <data-source name="MySQL - accident_tracker@localhost" uuid="e007e37f-b4f1-4dd5-beb9-dfc0db32ae3a">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
     </data-source>
   </component>
 </project>
