@@ -39,7 +39,7 @@ public class PersonsControllerTest {
         get("/api/persons")
             .then()
             .statusCode(200)
-            .body("numberOfElements", is(3));
+            .body("numberOfElements", is(5));
     }
 
     @Test
