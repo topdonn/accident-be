@@ -1,0 +1,21 @@
+CREATE DATABASE `accident_tracker` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+CREATE TABLE `person` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `gender` varchar(1) NOT NULL,
+  `monthly` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `vehicles` (
+  `id` int(11) NOT NULL,
+  `make` varchar(45) DEFAULT NULL,
+  `model` varchar(45) DEFAULT NULL,
+  `year` varchar(4) DEFAULT NULL,
+  `person-id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK-PERSONID_idx` (`person-id`),
+  CONSTRAINT `FK-PERSONID` FOREIGN KEY (`person-id`) REFERENCES `person` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
