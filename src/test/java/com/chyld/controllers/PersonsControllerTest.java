@@ -42,41 +42,41 @@ public class PersonsControllerTest {
             .body("numberOfElements", is(3));
     }
 
-//    @Test
-//    // GET /api/Persons/:id
-//    public void shouldGetASinglePerson() throws Exception {
-//        get("/api/Persons/1")
-//            .then()
-//            .statusCode(200)
-//            .body("name", is("mr. man"));
-//    }
-//
-//    @Test
-//    // POST /api/Persons
-//    public void shouldCreateAPerson() throws Exception {
-//        Map<String, Object> json = new HashMap<>();
-//        json.put("name", "miss USA");
-//        json.put("age", "30");
-//        json.put("gender", "F");
-//        json.put("monthlyPayment", "150");
-//
-//        given().
-//            contentType(ContentType.JSON).
-//            body(json).
-//        when().
-//            post("/api/persons")
-//        .then()
-//            .statusCode(200)
-//            .body("id", is(6));
-//    }
-//
-//    @Test
-//    // DELETE /api/Persons/:id
-//    public void shouldDeleteAPerson() throws Exception {
-//        when().
-//            delete("/api/persons/1")
-//        .then()
-//            .statusCode(200);
-//    }
+    @Test
+    // GET /api/Persons/:id
+    public void shouldGetASinglePerson() throws Exception {
+        get("/api/persons/1")
+            .then()
+            .statusCode(200)
+            .body("name", is("mr. man"));
+    }
+
+    @Test
+    // POST /api/Persons
+    public void shouldCreateAPerson() throws Exception {
+        Map<String, Object> json = new HashMap<>();
+        json.put("name", "miss USA");
+        json.put("age", "30");
+        json.put("gender", "F");
+        json.put("monthlyPayment", "150");
+
+        given().
+            contentType(ContentType.JSON).
+            body(json).
+        when().
+            post("/api/persons")
+        .then()
+            .statusCode(200)
+            .body("id", is(6));
+    }
+
+    @Test
+    // DELETE /api/Persons/:id
+    public void shouldDeleteAPerson() throws Exception {
+        when().
+            delete("/api/persons/1")
+        .then()
+            .statusCode(200);
+    }
 
 }

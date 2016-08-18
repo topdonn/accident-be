@@ -16,24 +16,26 @@
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
     <case-sensitivity plain-identifiers="mixed" quoted-identifiers="upper"/>
-    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
-      <schema id="1" name="accident_tracker"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="accident_tracker">
+        <visible>1</visible>
+      </schema>
       <table id="2" parent="1" name="claims"/>
       <table id="3" parent="1" name="person"/>
       <table id="4" parent="1" name="vehicles"/>
       <column id="5" parent="2" name="id">
         <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
+        <data-type>int(11)|0</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
       <column id="6" parent="2" name="date">
-        <data-type>datetime</data-type>
+        <data-type>datetime|0</data-type>
       </column>
       <column id="7" parent="2" name="photo">
-        <data-type>varchar(45)</data-type>
+        <data-type>varchar(45)|0</data-type>
       </column>
       <column id="8" parent="2" name="location">
-        <data-type>varchar(45)</data-type>
+        <data-type>varchar(45)|0</data-type>
       </column>
       <key id="9" parent="2" name="PRIMARY">
         <columns>id</columns>
@@ -41,20 +43,20 @@
       </key>
       <column id="10" parent="3" name="id">
         <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
+        <data-type>int(11)|0</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
       <column id="11" parent="3" name="name">
-        <data-type>varchar(45)</data-type>
+        <data-type>varchar(45)|0</data-type>
       </column>
       <column id="12" parent="3" name="age">
-        <data-type>int(11)</data-type>
+        <data-type>int(11)|0</data-type>
       </column>
       <column id="13" parent="3" name="gender">
-        <data-type>enum(&apos;M&apos;, &apos;F&apos;)</data-type>
+        <data-type>enum(&apos;M&apos;, &apos;F&apos;)|0</data-type>
       </column>
       <column id="14" parent="3" name="monthly-payment">
-        <data-type>int(11)</data-type>
+        <data-type>int(11)|0</data-type>
       </column>
       <key id="15" parent="3" name="PRIMARY">
         <columns>id</columns>
@@ -62,19 +64,19 @@
       </key>
       <column id="16" parent="4" name="id">
         <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
+        <data-type>int(11)|0</data-type>
       </column>
       <column id="17" parent="4" name="make">
-        <data-type>varchar(45)</data-type>
+        <data-type>varchar(45)|0</data-type>
       </column>
       <column id="18" parent="4" name="model">
-        <data-type>varchar(45)</data-type>
+        <data-type>varchar(45)|0</data-type>
       </column>
       <column id="19" parent="4" name="year">
-        <data-type>varchar(4)</data-type>
+        <data-type>varchar(4)|0</data-type>
       </column>
       <column id="20" parent="4" name="person-id">
-        <data-type>int(11)</data-type>
+        <data-type>int(11)|0</data-type>
       </column>
       <index id="21" parent="4" name="FK-PERSONID_idx">
         <columns>person-id</columns>
